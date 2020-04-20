@@ -1,0 +1,108 @@
+{
+  "label": {
+    "id": "Id",
+    "email": "Courrier électronique",
+    "password":  "Mot de passe",
+    "name": "Prénom",
+    "surname": "Nom",
+    "confirm_password": "Confirmer mot de passe",
+    "address": "Adresse",
+    "postcode": "Code postal",
+    "city": "Ville",
+    "state": "Etat",
+    "country": "Pays",
+    "tel": "Téléphone",
+    "birthday": "Date de naissance",
+    "height": "Hauteur",
+    "date diet": "Date de la diète",
+    "target": "Objetif",
+    "add weight": "Ajouter poids",
+    "date weight": "Date du poids"
+  } ,
+  "button": {
+    "login":"Login",
+    "send": "Envoyer",
+    "create": "Créer",
+    "update": "Modifier",
+    "remove": "Supprimer",
+    "cancel": "Annuler",
+    "Yes, delete it!": "Oui j'en suis sûre!",
+    "No, cancel!": "Non, annulez!",
+    "clean": "Nettoyer",
+    "new role": "Nouveau rôle",
+    "new user": "Nouvel utilisateur",
+    "recover": "Restablecer",
+    "save": "Sauvegarder",
+    "let's go": "Allons-y",
+    "upload photo": "Télécharger une photo"
+  },
+  "error": {
+    "field-required":"Le champ est obligatoire",
+    "email": "Ce n'est pas un email",
+    "password-mismatch": "Le mot de passe ne correspond pas",
+    "maxlength":"La longueur maximale est de {{valeur}} caractères.",
+    "minpassword":"Le mot de passe doit comporter au moins 8 caractères.",
+    "Empty-email-password":"Email ou mot de passe vide!",
+    "error_login":"Email ou mot de passe incorrect!",
+    "error_email":"Cet email n'existe pas!",
+    "error_date":"Vous avez dépassé le délai de 72 heures. Vous devez recommencer.",
+    "error_password": "Le changement de mot de passe a échoué"
+  },
+  "alert-error": {
+    "noconnect":"Non connecté: vérifiez le réseau.",
+    "pagenotfound":"Page non trouvée [404]",
+    "internalserverror":"erreur de serveur [500].",
+    "reqjsonparfailed":"L'analyse JSON a échoué.",
+    "uncaughterror":"Erreur non détectée",
+    "unauthorized":"Ces informations d'identification ne correspondent pas à nos enregistrements.",
+    "access denied": "Accès refusé",
+    "you dont have access to this resource": "Vous n'avez pas accès à cette ressource!",
+    "you dont have access to this application": "Vous n'avez pas accès à cette application!, Contactez votre coach"
+   
+  },
+  "page" : {
+    "home": "Accueil",
+    "logout" : "Logout",
+    "login": "Login",
+    "reset password": "Réinitialiser le mot de passe",
+    "change-password": "Mot de passe"
+  },
+  "message": {
+    "Are you sure?": "Êtes-vous sûr",
+    "You wont be able to revert this!": "Vous ne pourrez pas inverser cela!",
+    "Deleted!": "supprimé",
+    "Your record has been deleted.": "Votre inscription a été supprimée.",
+    "Remember": "Se souvenir",
+    "Do you forget yous password?": "Vous avez oublié votre mot de passe?",
+    "You have closed session successfully!": "Vous vous êtes déconnecté avec succès!",
+    "You will receive an email with the steps to follow":"Vous recevrez un email avec les étapes à suivre.",
+    "password changed": "Mot de passe changé",
+    "information": "Information",
+    "password": "Un message a été envoyé à votre adresse e-mail avec les étapes à suivre pour réinitialiser le mot de passe."
+  },
+  "menu": {
+    "users": "Utilisateurs",
+    "logout": "Fermer la session",
+    "profile": "Profil",
+    "change password": "Changement de mot de passe",
+    "diet": "Diète",
+    "training": "Entraînement",
+    "weight": "Poids",
+    "target": "Objetif",
+    "account": "Compte",
+    "home": "Accueil"
+  },
+  "title": {
+    "recover password": "Réinitialiser votre mot de passe",
+    "edit profile": "Modifier profil",
+    "complete your profile": "Complémenter profil",
+    "change password": "Changement de mot de passe",
+    "target": "Objetif",
+    "weight": "Poids",
+    "day" : "Jour"
+  },
+  "input": {
+    "male": "Masculin",
+    "female": "Féminin"
+  }
+}

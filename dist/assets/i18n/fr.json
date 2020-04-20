@@ -1,0 +1,173 @@
+{
+  "label": {
+    "id": "Id",
+    "email": "Courrier électronique",
+    "password":  "Mot de passe",
+    "name": "Prénom",
+    "surname": "Nom",
+    "confirm_password": "Confirmer mot de passe",
+    "address": "Adresse",
+    "postcode": "Code postal",
+    "city": "Ville",
+    "state": "Etat",
+    "country": "Pays",
+    "tel": "Téléphone",
+    "birthday": "Date de naissance",
+    "height": "Hauteur",
+    "date diet": "Date de la diète",
+    "target": "Objetif",
+    "add weight": "Ajouter poids",
+    "date weight": "Date du poids",
+    "exercise": "Exercice",
+    "series and repetitions": "séries et répétitions",
+    "weight": "Poids",
+    "rpe": "RPE",
+    "date rpe": "Date RPE",
+    "mesure": "Mesure",
+    "wellness": "wellness",
+    "date wellness": "Date Wellness",
+    "sensation": "Sensation",
+    "mood": "Humeur",
+    "sleep": "Sommeil"
+  } ,
+  "button": {
+    "login":"Login",
+    "send": "Envoyer",
+    "create": "Créer",
+    "update": "Modifier",
+    "remove": "Supprimer",
+    "cancel": "Annuler",
+    "Yes, delete it!": "Oui j'en suis sûre!",
+    "No, cancel!": "Non, annulez!",
+    "clean": "Nettoyer",
+    "new role": "Nouveau rôle",
+    "new user": "Nouvel utilisateur",
+    "recover": "Restablecer",
+    "save": "Sauvegarder",
+    "let's go": "Allons-y",
+    "upload photo": "Télécharger une photo",
+    "new password": "Nouveau mot de passe"
+  },
+  "error": {
+    "field-required":"Le champ est obligatoire",
+    "email": "Ce n'est pas un email",
+    "password-mismatch": "Le mot de passe ne correspond pas",
+    "maxlength":"La longueur maximale est de {{value}} caractères.",
+    "minpassword":"Le mot de passe doit comporter au moins 8 caractères.",
+    "Empty-email-password":"Email ou mot de passe vide!",
+    "error_login":"Email ou mot de passe incorrect!",
+    "error_email":"Cet email n'existe pas!",
+    "error_date":"Vous avez dépassé le délai de 72 heures. Vous devez recommencer.",
+    "error_password": "Le changement de mot de passe a échoué",
+    "max":"La valeur doit être entre 1 y 10."
+  },
+  "alert-error": {
+    "noconnect":"Non connecté: vérifiez le réseau.",
+    "pagenotfound":"Page non trouvée [404]",
+    "internalserverror":"erreur de serveur [500].",
+    "reqjsonparfailed":"L'analyse JSON a échoué.",
+    "uncaughterror":"Erreur non détectée",
+    "unauthorized":"Ces informations d'identification ne correspondent pas à nos enregistrements.",
+    "access denied": "Accès refusé",
+    "you dont have access to this resource": "Vous n'avez pas accès à cette ressource!",
+    "you dont have access to this application": "Vous n'avez pas accès à cette application!, Contactez votre coach"
+   
+  },
+  "page" : {
+    "home": "Accueil",
+    "logout" : "Logout",
+    "login": "Login",
+    "reset password": "Réinitialiser le mot de passe",
+    "change-password": "Mot de passe"
+  },
+  "message": {
+    "Are you sure?": "Êtes-vous sûr",
+    "You wont be able to revert this!": "Vous ne pourrez pas inverser cela!",
+    "Deleted!": "supprimé",
+    "Your record has been deleted.": "Votre inscription a été supprimée.",
+    "Remember": "Se souvenir",
+    "Do you forget yous password?": "Vous avez oublié votre mot de passe?",
+    "You have closed session successfully!": "Vous vous êtes déconnecté avec succès!",
+    "You will receive an email with the steps to follow":"Vous recevrez un email avec les étapes à suivre.",
+    "password changed": "Mot de passe changé",
+    "information": "Information",
+    "password": "Un message a été envoyé à votre adresse e-mail avec les étapes à suivre pour réinitialiser le mot de passe.",
+    "percentage in tooltip": "Pourcentage dans infobulle"
+  },
+  "menu": {
+    "users": "Utilisateurs",
+    "logout": "Fermer la session",
+    "profile": "Profil",
+    "change password": "Changement de mot de passe",
+    "diet": "Diète",
+    "training": "Entraînement",
+    "weight": "Poids",
+    "rpe": "Rpe",
+    "account": "Compte",
+    "home": "Accueil",
+    "advice": "Conseil",
+    "wellness": "Wellness"
+  },
+  "title": {
+    "recover password": "Réinitialiser votre mot de passe",
+    "edit profile": "Modifier profil",
+    "complete your profile": "Complémenter profil",
+    "change password": "Changement de mot de passe",
+    "rpe": "RPE",
+    "weight": "Poids",
+    "day" : "Jour",
+    "nutritional values": "Valeurs nutritionnels",
+    "scale borg": "Echelle de borg",
+    "wellness": "wellness"
+  },
+  "input": {
+    "male": "Masculin",
+    "female": "Féminin"
+  },
+  "nutrition": {
+    "kcal": "Kcal",
+    "protein": "Protéines",
+    "carbohydrates": "Glucides",
+    "sugar": "sucres",
+    "fat": "lipides",
+    "satfat": "graisses saturées",
+    "sodium": "Sodium",
+    "fiber": "Fibre",
+    "potassium": "Potassium"
+
+  },
+  "borg": {
+    "no effort": "Aucun effort",
+    "very very easy": "Très très facile",
+    "very easy": "Très facile",
+    "easy": "Facile",
+    "moderate effort": "Effort modéré",
+    "medium": "Moyen",
+    "a little hard": "un peu dur",
+    "hard": "Dur",
+    "very hard": "Très dur",
+    "very very hard": "Très très dur",
+    "maximum": "Maximal"
+  },
+  "sensation": {
+    "in the top": "Au top!",
+    "OK it is fine": "Ok, ça va",
+    "variable": "variable",
+    "not too much": "Pas trop",
+    "exhausted, not taste": "Epuisé, pas le goût"
+  },
+  "mood": {
+    "very good mood": "Très bonne humeur",
+    "good": "Bien",
+    "relaxed": "Détendu",
+    "stressed": "Stressé",
+    "depressed": "Déprimé"
+  },
+  "sleep": {
+    "great": "Super",
+    "normal": "Normal",
+    "not enough": "Pas assez",
+    "too few": "Trop peu",
+    "horror (cannot sleep)": "Horreur (pas fermé l'oeil)"
+  }
+}

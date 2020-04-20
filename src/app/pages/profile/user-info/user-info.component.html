@@ -1,0 +1,126 @@
+<mat-card class="p-0">  
+    <div class="bg-primary text-center py-1">       
+        <h2>{{ 'title.edit profile'|translate }}</h2> 
+    </div> 
+    
+    <form [formGroup]="personalForm" (ngSubmit)="onSubmit(personalForm.value)" fxLayout="row wrap" class="user-form p-1">
+
+        <div fxFlex="100" class="p-1">
+            <mat-form-field appearance="outline">
+                <mat-label>{{ 'label.name'|translate }}</mat-label>
+                <input matInput autocomplete="off" placeholder="{{ 'label.name'|translate }}" formControlName="name" type="text">
+                <mat-error *ngIf="personalForm.controls['name'].errors?.required">{{ 'error.field-required'|translate }}</mat-error>                
+                <mat-error *ngIf="personalForm.controls['name'].errors?.maxlength">{{ 'error.maxlength'|translate:{value: '20'} }}</mat-error>
+      </mat-form-field> 
+        </div>
+
+        <div fxFlex="100" fxFlex.gt-sm="50" fxFlex.sm="50" class="p-1">
+            <mat-form-field appearance="outline">
+                <mat-label>{{ 'label.surname'|translate }}</mat-label>
+                <input matInput autocomplete="off" placeholder="{{ 'label.surname'|translate }}" formControlName="surname" type="text">
+                <mat-error *ngIf="personalForm.controls['surname'].errors?.required">{{ 'error.field-required'|translate }}</mat-error>                  
+                <mat-error *ngIf="personalForm.controls['surname'].errors?.maxlength">{{ 'error.maxlength'|translate:{value:'20'} }}</mat-error>
+        </mat-form-field> 
+        </div>
+
+        <div fxFlex="100" fxFlex.gt-sm="50" fxFlex.sm="50" class="p-1">
+            <mat-form-field appearance="outline">
+                <mat-label>{{ 'label.email'|translate }}</mat-label>
+                <input matInput autocomplete="off" placeholder="{{ 'label.email'|translate }}" formControlName="email" type="email"> 
+                <mat-error *ngIf="personalForm.controls['email'].errors?.required">{{ 'error.field-required'|translate }}</mat-error>                 
+                <mat-error *ngIf="personalForm.controls['email'].errors?.email">{{ 'error.email'|translate }}</mat-error>
+        </mat-form-field> 
+        </div>
+
+        <div fxFlex="100" fxFlex.gt-sm="50" fxFlex.sm="50" class="p-1">
+            <mat-form-field appearance="outline">
+                <mat-label>{{ 'label.tel'|translate }}</mat-label>
+                <input matInput autocomplete="off" placeholder="{{ 'label.tel'|translate }}" formControlName="tel" type="text"> 
+                <mat-error *ngIf="personalForm.controls['tel'].errors?.maxlength">{{ 'error.maxlength'|translate:{value:'45'} }}</mat-error>                 
+            </mat-form-field> 
+        </div>
+
+        <div fxFlex="100" class="p-1">
+            <mat-form-field appearance="outline">
+                <mat-label>{{ 'label.address'|translate }}</mat-label> 
+                <textarea matInput placeholder="{{ 'label.address'|translate }}" formControlName="direction"></textarea>
+                <mat-error *ngIf="personalForm.controls['direction'].errors?.required">{{ 'error.field-required'|translate }}</mat-error>
+                <mat-error *ngIf="personalForm.controls['direction'].errors?.maxlength">{{ 'error.maxlength'|translate:{value:'255'} }}</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div fxFlex="100" fxFlex.gt-sm="50" fxFlex.sm="50" class="p-1">
+            <mat-form-field appearance="outline">
+                <mat-label>{{ 'label.postcode'|translate }}</mat-label>
+                <input matInput autocomplete="off" placeholder="{{ 'label.postcode'|translate }}" formControlName="postcode" type="text"> 
+                <mat-error *ngIf="personalForm.controls['postcode'].errors?.required">{{ 'error.field-required'|translate }}</mat-error>                 
+                <mat-error *ngIf="personalForm.controls['postcode'].errors?.maxlength">{{ 'error.maxlength'|translate:{value:'45'} }}</mat-error>
+        </mat-form-field> 
+        </div>
+    
+        <div fxFlex="100" fxFlex.gt-sm="50" fxFlex.sm="50" class="p-1">
+            <mat-form-field appearance="outline">
+                <mat-label>{{ 'label.city'|translate }}</mat-label>
+                <input matInput autocomplete="off" placeholder="{{ 'label.city'|translate }}" formControlName="city" type="text"> 
+                <mat-error *ngIf="personalForm.controls['city'].errors?.required">{{ 'error.field-required'|translate }}</mat-error>                 
+                <mat-error *ngIf="personalForm.controls['city'].errors?.maxlength">{{ 'error.maxlength'|translate:{value:'45'} }}</mat-error>
+         </mat-form-field> 
+        </div>
+
+        <div fxFlex="100" fxFlex.gt-sm="50" fxFlex.sm="50" class="p-1">
+            <mat-form-field appearance="outline">
+                <mat-label>{{ 'label.state'|translate }}</mat-label> 
+                <input matInput autocomplete="off" placeholder="{{ 'label.state'|translate }}" formControlName="state" type="text"> 
+                <mat-error *ngIf="personalForm.controls['state'].errors?.required">{{ 'error.field-required'|translate }}</mat-error>                 
+                <mat-error *ngIf="personalForm.controls['state'].errors?.maxlength">{{ 'error.maxlength'|translate:{value:'45'} }}</mat-error>
+            </mat-form-field>
+        </div>   
+
+        <div fxFlex="100" fxFlex.gt-sm="50" fxFlex.sm="50" class="p-1">
+            <mat-form-field appearance="outline">
+                <mat-label>{{'label.country'|translate }}</mat-label> 
+                <mat-select placeholder="{{'label.country'|translate }}" formControlName="countries_selector">
+                    <mat-option *ngFor="let country of countries" [value]="country.id">
+                        {{country.name}}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="personalForm.controls['countries_selector'].errors?.required">{{ 'error.field-required'|translate }}</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div fxFlex="100" fxFlex.gt-sm="33.3" fxFlex.sm="50" class="p-1">
+            <mat-radio-group formControlName="sex">
+                <mat-radio-button value="F" class="mx-1">{{ 'input.female'|translate }}</mat-radio-button>
+                <mat-radio-button value="M" class="mx-1">{{ 'input.male'|translate }}</mat-radio-button>
+            </mat-radio-group>        
+        </div>
+
+        <div fxFlex="100" fxFlex.gt-sm="33.3" fxFlex.sm="50" class="p-1">
+            <mat-form-field appearance="outline">
+                <input matInput [matDatepicker]="picker" placeholder="{{ 'label.birthday'|translate }}" formControlName="birthday">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+
+        <div fxFlex="100" fxFlex.gt-sm="33.3" fxFlex.sm="50" class="p-1">
+            <mat-form-field appearance="outline">
+                <mat-label>{{ 'label.height'|translate }}</mat-label> 
+                <input matInput autocomplete="off" placeholder="{{ 'label.height'|translate }}" formControlName="height" type="number" step="any"> 
+            </mat-form-field>
+        </div>
+     
+        <mat-form-field appearance="outline" fxFlex="100">
+            <mat-label>{{ 'label.target'|translate }}</mat-label>
+            <textarea matInput placeholder="{{ 'label.target'|translate }}" formControlName="target"></textarea>
+            <mat-error *ngIf="personalForm.controls['target'].errors?.maxlength">{{ 'error.maxlength'|translate:{value:'255'} }}</mat-error>
+        </mat-form-field>
+
+        <div fxFlex="100" class="p-1 text-center">
+            <button mat-raised-button color="primary" class="uppercase mx-1" type="submit">{{ 'button.update'|translate }}</button>             
+        </div>
+
+    </form> 
+   
+</mat-card>
+ 

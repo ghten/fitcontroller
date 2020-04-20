@@ -1,0 +1,56 @@
+{
+  "configVersion": 1,
+  "timestamp": 1586852259159,
+  "index": "/training/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [],
+      "patterns": [
+        "https:\\/\\/fitcontroller\\.com\\/images\\/photos\\/.*",
+        "https:\\/\\/www\\.youtube\\.com\\/.*"
+      ]
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "fitcontroller-api",
+      "patterns": [
+        "https:\\/\\/fitcontroller\\.com\\/api\\/training\\/.*"
+      ],
+      "strategy": "freshness",
+      "maxSize": 20,
+      "maxAge": 2592000000,
+      "timeoutMs": 5000,
+      "version": 1
+    }
+  ],
+  "hashTable": {},
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}

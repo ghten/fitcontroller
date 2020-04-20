@@ -1,0 +1,64 @@
+
+<div class="row bg-primary text-center">
+    <h2>{{ 'title.rpe'|translate }}</h2>
+</div>
+<mat-card class="p-0 rpe">
+    <mat-card-content fxLayoutAlign="center center">
+        <div class="chart">
+            <ngx-charts-line-chart
+                [view]="view"
+                [scheme]="colorScheme"
+                [results]="multi"
+                [gradient]="gradient"
+                [xAxis]="showXAxis"
+                [yAxis]="showYAxis"
+                [legend]="showLegend"
+                [showXAxisLabel]="showXAxisLabel"
+                [showYAxisLabel]="showYAxisLabel"
+                [xAxisLabel]="xAxisLabel"
+                [yAxisLabel]="yAxisLabel"
+                [autoScale]="autoScale"
+                [timeline]="timeline"
+                [yAxisTicks]="yAxisTicks"
+                [yScaleMin]="yScaleMin"
+                [yScaleMax]="yScaleMax"
+                (select)="onSelect($event)">
+            </ngx-charts-line-chart>
+        </div>   
+    </mat-card-content>
+</mat-card>
+
+<h2>{{ 'title.scale borg'|translate }}</h2>
+<div fxLayout="column">
+    <div class="flex-p"> 
+        <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">       
+            <ng-container matColumnDef="position">
+                <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+            </ng-container>         
+            <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+            </ng-container>     
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+    </div>
+</div>
+    
+    <form [formGroup]="rpeForm" (ngSubmit)="onSubmit(rpeForm.value)" fxLayout="row wrap" class="p-1">
+
+        <mat-form-field appearance="outline" fxFlex="100">
+            <mat-label>{{ 'label.mesure'|translate }}</mat-label>
+            <input type="number" min="1" max="10" step="1" matInput placeholder="{{ 'label.mesure'|translate }}" formControlName="mesure">
+            <mat-error *ngIf="rpeForm.controls['mesure'].errors?.required">{{ 'error.field-required'|translate }}</mat-error>
+            <mat-error *ngIf="rpeForm.controls['mesure'].errors?.max">{{ 'error.max'|translate  }}</mat-error>
+            <mat-error *ngIf="rpeForm.controls['mesure'].errors?.min">{{ 'error.max'|translate }}</mat-error>
+        </mat-form-field>
+
+
+        <div fxFlex="100" class="p-1 text-center">
+            <button mat-raised-button color="primary" class="uppercase mx-1" type="submit">{{ 'button.send'|translate }}</button>
+        </div>
+
+    </form>
+

@@ -1,0 +1,43 @@
+<mat-card class="p-0">
+    <div class="bg-primary text-center py-1">
+        <h2>{{ 'title.weight'|translate }}</h2>
+    </div>
+
+    <form [formGroup]="weightForm" (ngSubmit)="onSubmit(weightForm.value)" fxLayout="row wrap" class="p-1">
+
+        <mat-form-field appearance="outline" fxFlex="100">
+            <mat-label>{{ 'label.add weight'|translate }}</mat-label>
+            <input type="number" matInput placeholder="{{ 'label.add weight'|translate }}" step="0.01" formControlName="weight">            
+            <mat-error *ngIf="weightForm.controls['weight'].errors?.required">{{ 'error.field-required'|translate }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" fxFlex="100">
+            <mat-label>{{ 'label.date weight'|translate }}</mat-label>
+            <input matInput [matDatepicker]="picker1" placeholder="{{ 'label.date weight'|translate }}" formControlName="photo_date">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+            <mat-error *ngIf="weightForm.controls['photo_date'].errors?.required">{{ 'error.field-required'|translate }}</mat-error>
+        </mat-form-field>
+
+        <div fxFlex="100" class="p-1">
+            <div *ngFor="let file of files">
+                <span id="file-label">
+                    {{file.data.name}}
+                </span>
+            </div>
+        
+            <button mat-raised-button color="warn" (click)="onClick()" type="button" class="pb-2">
+                <mat-icon>file_upload</mat-icon>
+                {{'button.upload photo'|translate }}
+            </button>
+    
+            <input type="file" id="fileUpload" name="fileUpload" multiple="multiple" accept="{{accept}}" style="display:none;" />
+        </div> 
+  
+        <div fxFlex="100" class="p-1 text-center">
+            <button mat-raised-button color="primary" class="uppercase mx-1" type="submit">{{ 'button.send'|translate }}</button>
+        </div>
+
+    </form>
+
+</mat-card>

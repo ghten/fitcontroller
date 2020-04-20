@@ -1,0 +1,20 @@
+<button mat-icon-button [matMenuTriggerFor]="userMenu" #userMenuTrigger="matMenuTrigger" >
+    <mat-icon>account_circle</mat-icon>
+</button>
+
+<mat-menu #userMenu="matMenu" [overlapTrigger]="false" class="toolbar-dropdown-menu user-menu">
+    <!--<span (mouseleave)="userMenuTrigger.closeMenu()">-->
+       <a mat-menu-item routerLink="/profile/user-info"> 
+            <mat-icon>edit</mat-icon>
+            <span>{{'menu.profile'|translate }}</span> 
+        </a>
+        <a mat-menu-item routerLink="/profile/change-password"> 
+            <mat-icon>lock_outline</mat-icon>
+            <span>{{'menu.change password'|translate }}</span> 
+        </a>
+       <div class="divider"></div>
+        <button mat-menu-item (click)="logout()"> 
+            <mat-icon>power_settings_new</mat-icon>
+            <span>{{'menu.logout'|translate }}</span> 
+        </button>
+</mat-menu>

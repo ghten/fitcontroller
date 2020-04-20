@@ -1,0 +1,16 @@
+.chart {
+    margin-left: 10px;
+}
+.mat-row:nth-child(1), .mat-row:nth-child(2), .mat-row:nth-child(3){
+    background-color: #c4fca3;
+}
+.mat-row:nth-child(4), .mat-row:nth-child(5), .mat-row:nth-child(6), .mat-row:nth-child(7){
+    background-color: #ffbb00;
+  }
+  .mat-row:nth-child(8), .mat-row:nth-child(9), .mat-row:nth-child(10){
+    background-color: #c50000;
+  }
+  .mat-row:nth-child(11){
+    background-color: red;
+  }
+ 

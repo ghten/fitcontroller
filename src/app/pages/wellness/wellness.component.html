@@ -1,0 +1,72 @@
+
+<div class="row bg-primary text-center">
+    <h2>{{ 'title.wellness'|translate }}</h2>
+</div>
+<mat-card class="p-0 rpe">
+    <mat-card-content fxLayoutAlign="center center">
+        <div class="chart">
+            <ngx-charts-line-chart
+                [view]="view"
+                [scheme]="colorScheme"
+                [results]="multi"
+                [gradient]="gradient"
+                [xAxis]="showXAxis"
+                [yAxis]="showYAxis"
+                [legend]="showLegend"
+                [showXAxisLabel]="showXAxisLabel"
+                [showYAxisLabel]="showYAxisLabel"
+                [xAxisLabel]="xAxisLabel"
+                [yAxisLabel]="yAxisLabel"
+                [autoScale]="autoScale"
+                [timeline]="timeline"
+                 (select)="onSelect($event)">
+            </ngx-charts-line-chart>
+        </div>   
+    </mat-card-content>
+</mat-card>
+
+<mat-card class="p-0">
+    <form [formGroup]="wellnessForm" (ngSubmit)="onSubmit(wellnessForm.value)" fxLayout="row wrap" class="p-1">
+
+        <div fxFlex="100" fxFlex.gt-sm="33.3" fxFlex.sm="50" class="p-1">
+            <mat-form-field appearance="outline">
+                <mat-label>{{ 'label.sensation'|translate }}</mat-label>
+                <mat-select placeholder="{{ 'label.sensation'|translate }}" formControlName="fsensation">
+                    <mat-option *ngFor="let sensation of sensations" [value]="sensation.position">
+                        {{sensation.name}}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="wellnessForm.controls['fsensation'].errors?.required">{{ 'error.field-required'|translate }}</mat-error>
+            </mat-form-field>
+        </div>    
+
+        <div fxFlex="100" fxFlex.gt-sm="33.3" fxFlex.sm="50" class="p-1">
+            <mat-form-field appearance="outline">
+                <mat-label>{{ 'label.mood'|translate }}</mat-label>
+                <mat-select placeholder="{{ 'label.mood'|translate }}" formControlName="fmood">
+                    <mat-option *ngFor="let mood of moods" [value]="mood.position">
+                        {{mood.name}}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="wellnessForm.controls['fmood'].errors?.required">{{ 'error.field-required'|translate }}</mat-error>
+            </mat-form-field>
+        </div>    
+
+        <div fxFlex="100" fxFlex.gt-sm="33.3" fxFlex.sm="50" class="p-1">
+            <mat-form-field appearance="outline">
+                <mat-label>{{ 'label.sleep'|translate }}</mat-label>
+                <mat-select placeholder="{{ 'label.sleep'|translate }}" formControlName="fsleep">
+                    <mat-option *ngFor="let sleep of sleeps" [value]="sleep.position">
+                        {{sleep.name}}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="wellnessForm.controls['fsleep'].errors?.required">{{ 'error.field-required'|translate }}</mat-error>
+            </mat-form-field>
+        </div>    
+
+        <div fxFlex="100" class="p-1 text-center">
+            <button mat-raised-button color="primary" class="uppercase mx-1" type="submit">{{ 'button.send'|translate }}</button>
+        </div>
+
+    </form>
+</mat-card>

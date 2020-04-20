@@ -1,0 +1,73 @@
+<div fxLayout="column">
+    <div class="flex-p">
+        <mat-card>
+            <mat-card-header fxLayoutAlign="center center"> 
+                <mat-card-subtitle><h2>{{'label.date diet'|translate }}: {{ diet.updated_at }}</h2></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-tab-group>
+                    <mat-tab *ngFor="let partdiet of partdiets;let i=index;" label="{{partdiet.title | uppercase}}">
+                        <div *ngFor="let menu of menus">
+                            <div *ngFor="let food of menu">
+                                <div *ngIf="partdiet.id==food.idpartdiet">
+                                    <br>
+                                    <h3>{{food.name}}</h3>
+                                    <div *ngFor="let plate of food.plates">
+                                        <span class="py-1">{{plate.name}}: {{plate.weight}} gr</span>
+                                    </div>   
+                                    <p class="comment">{{food.comment}}</p>
+                                </div>
+                            </div>    
+                        </div>
+                        <mat-card class="mt-2 nutrition">  
+                            <mat-divider></mat-divider>
+                            <mat-card-header> 
+                                <mat-card-subtitle><h4>{{'title.nutritional values'|translate }}</h4></mat-card-subtitle>
+                            </mat-card-header>
+                            <mat-card-content>
+                                <mat-list>
+                                    <mat-list-item><span>{{'nutrition.kcal'|translate }}:</span> {{partdiet.kcal}}</mat-list-item>
+                                    <mat-list-item><span>{{'nutrition.protein'|translate }}:</span> {{partdiet.protein}}</mat-list-item>
+                                    <mat-list-item><span>{{'nutrition.carbohydrates'|translate }}:</span> {{partdiet.carbohydrates}}</mat-list-item>
+                                    <mat-list-item><span>{{'nutrition.sugar'|translate }}:</span> {{partdiet.sugar}}</mat-list-item>
+                                    <mat-list-item><span>{{'nutrition.fat'|translate }}:</span> {{partdiet.fat}}</mat-list-item>
+                                    <mat-list-item><span>{{'nutrition.satfat'|translate }}:</span> {{partdiet.satfat}}</mat-list-item>
+                                    <mat-list-item><span>{{'nutrition.sodium'|translate }}:</span> {{partdiet.sodium}}</mat-list-item>
+                                    <mat-list-item><span>{{'nutrition.fiber'|translate }}:</span> {{partdiet.fiber}}</mat-list-item>
+                                    <mat-list-item><span>{{'nutrition.potassium'|translate }}:</span> {{partdiet.potassium}}</mat-list-item>
+                                </mat-list>
+                                <p>{{'message.percentage in tooltip'|translate }}</p>
+                                <div class="chart">
+                                    <ngx-charts-pie-chart
+                                        [view]="view"
+                                        [scheme]="colorScheme"
+                                        [results]="single[i]"
+                                        [gradient]="gradient"
+                                        [legend]="legend"
+                                        [legendPosition]="legendPosition"
+                                        (select)="onSelect($event)">               
+                                    </ngx-charts-pie-chart>
+                                </div>                           
+                            </mat-card-content>
+                        </mat-card> 
+                    </mat-tab>
+                </mat-tab-group>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>    
+
+
+<!--
+    [gradient]="gradient"
+                                    [xAxis]="showXAxis"
+                                    [yAxis]="showYAxis"
+                                    [legend]="showLegend"
+                                    [showXAxisLabel]="showXAxisLabel"
+                                    [showYAxisLabel]="showYAxisLabel"
+                                    [xAxisLabel]="xAxisLabel"
+                                    [yAxisLabel]="yAxisLabel"
+                                    [autoScale]="autoScale"
+                                    [timeline]="timeline"
+                                    [label] = "protein"
+-->

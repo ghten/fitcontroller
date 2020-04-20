@@ -1,0 +1,59 @@
+<div fxLayout="row" fxLayoutAlign="space-between center" class="flex-p">
+  <div fxLayout="row">
+      <mat-button-toggle-group #controls="matButtonToggleGroup" appearance="legacy" [routerLink]="['/add-weight']">            
+          <mat-button-toggle>
+            <mat-icon>person_add</mat-icon>
+          </mat-button-toggle>
+          <mat-button-toggle (click)="remove()">
+            <mat-icon>clear</mat-icon>
+          </mat-button-toggle>
+      </mat-button-toggle-group>            
+  </div>
+</div>
+
+<div fxLayout="row wrap"> 
+    <mat-card fxFlex="100">
+        <mat-card-content fxLayoutAlign="center center">
+            <div class="chart">
+            <ngx-charts-line-chart
+                [view]="view"
+                [scheme]="colorScheme"
+                [results]="multi"
+                [gradient]="gradient"
+                [xAxis]="showXAxis"
+                [yAxis]="showYAxis"
+                [legend]="showLegend"
+                [showXAxisLabel]="showXAxisLabel"
+                [showYAxisLabel]="showYAxisLabel"
+                [xAxisLabel]="xAxisLabel"
+                [yAxisLabel]="yAxisLabel"
+                [autoScale]="autoScale"
+                [timeline]="timeline"
+                (select)="onSelect($event)">
+            </ngx-charts-line-chart></div>   
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<div fxLayout="row wrap">    
+      <mat-card class="p-0 weight mt-1" fxFlex="100">  
+          <div fxLayout="row">
+              <div fxFlex="100" fxLayout="column" fxLayoutAlign="center center">
+                <div>  
+                      <img *ngIf="photo" [src]="urlPhoto" class="transition-2">
+                      <img *ngIf="!photo" src="assets/img/users/default-user.jpg" class="transition-2">  
+                </div>                                             
+              </div>
+          </div> 
+          <div fxLayout="row" fxLayoutAlign="center center">
+              <div fxFlex="100" fxLayout="column" class="user-details transition-2">
+                  <p fxLayout="row" fxLayoutAlign="center center">
+                      <span>{{ weight.weight }}</span>
+                  </p>
+                  <p fxLayout="row" fxLayoutAlign="center center">
+                    <span>{{ datePhoto }}</span>
+                  </p>
+              </div>
+          </div>
+      </mat-card>
+</div>

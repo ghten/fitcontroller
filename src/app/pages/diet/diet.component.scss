@@ -1,0 +1,19 @@
+.nutrition{
+    padding: 16px 0px;
+    .mat-list .mat-list-item, .mat-list-item {
+        font-size: 12px !important;
+        height: 18px;
+        span {
+            font-style: oblique;  
+            padding-right: 5px;  
+        }
+    }
+
+    .mat-card-subtitle {
+        margin-bottom: 0px;
+    }
+
+    .mat-list-base {
+        padding-top: 0px;
+    }
+}

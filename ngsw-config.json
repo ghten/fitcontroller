@@ -1,0 +1,47 @@
+{
+  "$schema": "./node_modules/@angular/service-worker/config/schema.json",
+  "index": "/training/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "resources": {
+        "files": [
+          "/training/favicon.ico",
+          "/training/index.html",
+          "/training/*.css",
+          "/training/*.js",
+          "/training/manifest.webmanifest.json"
+        ],
+        "urls": [
+          "https://fitcontroller.com/images/photos/**",
+          "https://www.youtube.com/**"
+        ]
+      }
+    }, {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/training/assets/**",
+          "/training/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
+        ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "fitcontroller-api",
+      "urls": [
+        "https://fitcontroller.com/api/training/**"
+      ],
+      "cacheConfig": {
+        "maxSize": 20,
+        "maxAge": "30d",
+        "timeout": "5s",
+        "strategy": "freshness"
+      }
+    }
+  ]
+}
